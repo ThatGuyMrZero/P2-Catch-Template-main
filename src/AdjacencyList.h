@@ -1,15 +1,27 @@
 #pragma once
-
-#include <string>
-
 using namespace std;
+#include <vector>
+#include <map>
+#include <iostream>
+#include <unordered_map>
+#include <iomanip>
+#include <algorithm>
+
 
 class AdjacencyList {
-    private:
-    //Think about what member variables you need to initialize
-    public:
-    //Think about what helper functions you will need in the algorithm
-    string PageRank(int n);
-};
+private:
+	// Think about what member variables you need to initialize
+	unordered_map<string, vector<string>> Created_Graph;
+	unordered_map<string, float> Page_rank;
 
-// This class and method are optional.
+public:
+	//Think about what helper functions you will need in the algorithm
+	AdjacencyList() {}
+
+	void PageRank(int n);
+	void printIntermediateRanks();
+	void printRanks();
+	void addEdge(string& from, string& to);
+
+
+};
